@@ -1,0 +1,67 @@
+
+
+
+create table Customer( Cust_id int primary key, Cust_name varchar2(20));
+create table Item(item_id int primary key, item_name varchar2(10), price int);
+create table Sale(bill_no. int primary key, bill_date date, cust_id int FOREIGN KEY REFERENCES Customer(Cust_id), Item_id int FOREIGN KEY REFERENCES Item(Item_id), qty_sold int )
+
+
+
+insert into Customer values( 1,'Abc');
+insert into Customer values( 2,'Bcd');
+insert into Customer values( 3,'Cde');
+
+
+
+
+insert into Item values (111,'Mouse', 200);
+insert into Item values (112,'Keyboard', 500);
+insert into Item values (113,'Speakers', 1000 );
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+		
+				SV Github 
+				
+				
+				
+				
+create table Customer67(cust_id int PRIMARY KEY,cust_name varchar(30));
+create table Itemdata(item_id int primary key,item_name varchar (30),price int);
+
+
+
+
+insert into Customer67 values('10','Shashwat');
+insert into Customer67 values('11','ishu');
+insert into Customer67 values('12','Rishabh');
+
+
+insert into Itemdata values('20','tea','10');
+insert into Itemdata values('21','coffee','20');
+insert into Itemdata values('22','coldcoffee','50');
+
+//it some time work but i did'nt see//
+create table sale(bill_no int primary key,bill_date Date,cust_id int  FOREIGN KEY REFERENCES Customer67(cust_id),Item_id int  FOREIGN KEY REFERENCES Itemdata(Item_id),quant_sold int);
+
+// this work clearly or easily in every place i want //
+CREATE TABLE sale67(
+    billno int NOT NULL,
+    billdate DATE,
+    cust_id int,
+   item_id int,
+    PRIMARY KEY (billno),
+    CONSTRAINT FK_custsale67 FOREIGN KEY (cust_id)
+    REFERENCES customer67(cust_id),
+CONSTRAINT FK_Itemsale67 FOREIGN KEY (item_id)
+    REFERENCES Itemdata(item_id)
+    );
+    
+    //we can also add one foregn key then alter table by adding the needed column and the may kit reference with the table
+    
+    ALTER TABLE Orders
+ADD FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
+
+/* but i did'nt used it yet as it do not work for my case*/
+
