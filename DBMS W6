@@ -65,3 +65,14 @@ ADD FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
 
 /* but i did'nt used it yet as it do not work for my case*/
 
+
+
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+
+create table College ( cname varchar2(10) primary key, state varchar2(10), enrollment int);
+create table Student (sID int primary key, sName varchar2(10), GPA number, sizeHS int, DoB date );
+create table Apply (sID int)
